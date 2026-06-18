@@ -1,7 +1,12 @@
 /* ============================
    SectionDecor — per-section corner decorations
-   Each corner = gold ornament + floral cluster, mirrored across all four
-   corners so the framing stays balanced. One-time fade/scale entrance.
+   Each corner = gold ornament + floral cluster, oriented so all four corners
+   stay balanced. One-time fade/scale entrance on section reveal.
+
+   The gold ornament's artwork is naturally a TOP-LEFT corner; the flower's
+   artwork is naturally a BOTTOM-LEFT corner. They therefore need DIFFERENT
+   flips per corner, so the flip is baked into each image's own transform
+   (sign = orientation, magnitude = entrance scale) rather than the shared slot.
    ============================ */
 
 .section-decor {
@@ -12,60 +17,70 @@
   overflow: hidden;
 }
 
-/* --- Slot: anchors a corner and mirrors it so all four corners match --- */
+/* --- Slot: just anchors a corner (no flip) --- */
 .sd-slot {
   position: absolute;
   width: 170px;
   height: 170px;
 }
 
-.sd-tl { top: 0;    left: 0;  transform: none; }
-.sd-tr { top: 0;    right: 0; transform: scaleX(-1); }
-.sd-bl { bottom: 0; left: 0;  transform: scaleY(-1); }
-.sd-br { bottom: 0; right: 0; transform: scale(-1, -1); }
+.sd-tl { top: 0;    left: 0;  }
+.sd-tr { top: 0;    right: 0; }
+.sd-bl { bottom: 0; left: 0;  }
+.sd-br { bottom: 0; right: 0; }
 
-/* --- Corner images: shared entrance (hidden + shrunk, settles on reveal) --- */
+/* --- Corner images: shared entrance state (hidden + shrunk) --- */
 .sd-corner {
   position: absolute;
-  top: 0;
-  left: 0;
   height: auto;
-  transform-origin: top left;
   opacity: 0;
-  transform: scale(0.6);
   transition:
     opacity 0.9s ease-in-out,
     transform 0.9s cubic-bezier(0.34, 1.4, 0.64, 1);
   will-change: opacity, transform;
 }
 
-/* Gold filigree — sits at the very corner, behind the flowers */
-.sd-ornamen {
-  width: 112px;
-  transition-delay: 0.1s;
-}
+.sd-ornamen { width: 112px; transition-delay: 0.1s; }
+.sd-flower  { width: 150px; transition-delay: 0.28s; }
 
-/* Floral cluster — overlaps the gold, spilling inward into the section.
-   `.jpeg` carries a light background, so multiply blends it into the cream. */
-.sd-flower {
-  top: 6px;
-  left: -6px;
-  width: 150px;
-  mix-blend-mode: multiply;
-  transition-delay: 0.28s;
-}
+/* Anchor each image to its page corner. transform-origin stays at the default
+   (center) so the ±1 flips mirror the content IN PLACE without shifting the
+   box off its edge (which overflow:hidden would clip). */
+.sd-tl .sd-corner { top: 0;    left: 0;  }
+.sd-tr .sd-corner { top: 0;    right: 0; }
+.sd-bl .sd-corner { bottom: 0; left: 0;  }
+.sd-br .sd-corner { bottom: 0; right: 0; }
 
-/* --- Revealed state — corners pop into place --- */
-.section.revealed .sd-corner {
-  opacity: 1;
-  transform: scale(1);
-}
+/* --- Hidden state: orientation (sign) + shrunk (0.6) --- */
+/* Gold ornament — artwork is naturally a TOP-LEFT corner */
+.sd-tl .sd-ornamen { transform: scale(0.6); }
+.sd-tr .sd-ornamen { transform: scale(-0.6, 0.6); }
+.sd-bl .sd-ornamen { transform: scale(0.6, -0.6); }
+.sd-br .sd-ornamen { transform: scale(-0.6, -0.6); }
 
-/* Respect reduced-motion preference */
+/* Flower — artwork is naturally a BOTTOM-LEFT corner */
+.sd-bl .sd-flower { transform: scale(0.6); }
+.sd-br .sd-flower { transform: scale(-0.6, 0.6); }
+.sd-tl .sd-flower { transform: scale(0.6, -0.6); }
+.sd-tr .sd-flower { transform: scale(-0.6, -0.6); }
+
+/* --- Revealed state: same orientation, full size --- */
+.section.revealed .sd-corner { opacity: 1; }
+
+.section.revealed .sd-tl .sd-ornamen { transform: scale(1); }
+.section.revealed .sd-tr .sd-ornamen { transform: scale(-1, 1); }
+.section.revealed .sd-bl .sd-ornamen { transform: scale(1, -1); }
+.section.revealed .sd-br .sd-ornamen { transform: scale(-1, -1); }
+
+.section.revealed .sd-bl .sd-flower { transform: scale(1); }
+.section.revealed .sd-br .sd-flower { transform: scale(-1, 1); }
+.section.revealed .sd-tl .sd-flower { transform: scale(1, -1); }
+.section.revealed .sd-tr .sd-flower { transform: scale(-1, -1); }
+
+/* Respect reduced-motion: fade only, orientation snaps (no scale animation) */
 @media (prefers-reduced-motion: reduce) {
   .sd-corner {
     transition: opacity 0.4s ease;
-    transform: scale(1);
   }
 }
 
