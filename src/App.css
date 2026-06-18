@@ -37,6 +37,24 @@
   display: none;
 }
 
+/* --- Watercolor Frame Decoration on every section --- */
+.invitation-content > .section {
+  position: relative;
+}
+
+.invitation-content > .section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('./assets/6_juni_6.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* --- Section background variations --- */
 .section-cream {
   background: var(--cream-light);
