@@ -1,0 +1,156 @@
+/* ============================
+   CoverPage Styles
+   ============================ */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  animation: fadeIn 1s ease;
+  overflow: hidden;
+}
+
+.cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  z-index: 10;
+  padding: var(--space-xl);
+  animation: scaleUp 1.2s ease;
+}
+
+.cover-label {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cover-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.cover-name {
+  font-size: 56px;
+  color: var(--gold-primary);
+  line-height: 1.1;
+  text-shadow: 1px 1px 2px rgba(184, 134, 11, 0.15);
+}
+
+.cover-ampersand {
+  font-family: var(--font-script);
+  font-size: 36px;
+  color: var(--maroon-primary);
+  margin: -4px 0;
+}
+
+.cover-date {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.cover-guest {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.cover-guest-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.cover-guest-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cover-btn {
+  margin-top: var(--space-xl);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cover-btn:hover {
+  animation: none;
+}
+
+/* Decorative strips */
+.cover-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--maroon-gradient);
+  z-index: 5;
+}
+
+.cover-strip-top {
+  top: 0;
+}
+
+.cover-strip-bottom {
+  bottom: 0;
+}
+
+/* Floral blobs */
+.cover-floral {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cover-floral-top {
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 60% 60%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
+  border-radius: 50%;
+}
+
+.cover-floral-bottom {
+  bottom: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 40% 40%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
+  border-radius: 50%;
+}
+
+/* Close animation */
+.cover.closing {
+  animation: coverSlideUp 0.8s ease forwards;
+}
+
+@keyframes coverSlideUp {
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 360px) {
+  .cover-name {
+    font-size: 44px;
+  }
+}

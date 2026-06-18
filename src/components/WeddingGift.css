@@ -1,0 +1,123 @@
+.gift-section {
+  padding: 0;
+  background: var(--cream-light);
+}
+
+.gift-inner {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.gift-text {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 340px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* Bank Card */
+.bank-card {
+  background: linear-gradient(145deg, #f8f8f8, #ffffff, #f0f0f0);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.bank-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.bank-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.bank-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.bank-logo-placeholder {
+  background: linear-gradient(135deg, #003d7a, #0056a6);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.bank-logo-text {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.bank-chip {
+  margin-bottom: var(--space-lg);
+}
+
+.bank-number {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-md);
+}
+
+.bank-copy-btn {
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-white);
+  background: var(--gold-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--space-md);
+  border: none;
+}
+
+.bank-copy-btn:hover {
+  background: var(--gold-primary);
+}
+
+.bank-holder {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.gift-confirm-btn {
+  display: flex;
+  margin: 0 auto;
+}
+
+/* Reveal */
+.gift-section .bank-card {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+
+.gift-section.revealed .bank-card {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.2s;
+}

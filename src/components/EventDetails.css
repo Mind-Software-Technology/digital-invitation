@@ -1,0 +1,78 @@
+.event-section {
+  background: var(--cream-light);
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.event-card {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.event-icon {
+  margin-bottom: var(--space-md);
+}
+
+.event-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.event-date {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.event-time {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.event-venue {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.event-address {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.event-separator {
+  text-align: center;
+  padding: var(--space-md) 0;
+  color: var(--gold-primary);
+  font-size: 14px;
+}
+
+/* Reveal animations */
+.event-section .event-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.event-section.revealed .event-card:first-of-type {
+  opacity: 1; transform: translateY(0); transition-delay: 0.2s;
+}
+
+.event-section.revealed .event-card:last-of-type {
+  opacity: 1; transform: translateY(0); transition-delay: 0.4s;
+}
+
+.event-section.revealed .event-separator {
+  animation: fadeIn 0.6s ease 0.3s both;
+}
