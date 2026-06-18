@@ -7,6 +7,21 @@
   z-index: 2;
 }
 
+/* Rumah Gadang illustration — fills the gap below the title */
+.event-rumah-gadang {
+  width: 150px;
+  height: 150px;
+  margin: var(--space-md) auto var(--space-xl);
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(60, 10, 10, 0.18));
+}
+
+.event-rumah-gadang img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .event-card {
   text-align: center;
   padding: var(--space-xl) var(--space-lg);
@@ -83,18 +98,29 @@
 }
 
 /* Reveal animations */
+.event-section .event-rumah-gadang {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.event-section.revealed .event-rumah-gadang {
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+
 .event-section .event-card {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
 }
 
-.event-section.revealed .event-card:first-of-type {
+.event-section.revealed .event-card {
   opacity: 1; transform: translateY(0); transition-delay: 0.2s;
 }
 
-.event-section.revealed .event-card:last-of-type {
-  opacity: 1; transform: translateY(0); transition-delay: 0.4s;
+/* Stagger the second card (the one after the ✦ separator) */
+.event-section.revealed .event-separator + .event-card {
+  transition-delay: 0.4s;
 }
 
 .event-section.revealed .event-separator {

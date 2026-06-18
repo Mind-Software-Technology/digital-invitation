@@ -25,7 +25,7 @@ export default function LocationMap() {
                 </button>
                 <iframe
                   className="location-iframe"
-                  src={`https://maps.google.com/maps?q=${location.lat},${location.lng}&z=15&output=embed`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=14&output=embed`}
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
