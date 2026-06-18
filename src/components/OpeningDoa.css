@@ -23,7 +23,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(44, 62, 80, 0.5);
   color: white;
   font-size: 16px;
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 .opening-close-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(44, 62, 80, 0.7);
   transform: translateX(-50%) scale(1.1);
 }
 

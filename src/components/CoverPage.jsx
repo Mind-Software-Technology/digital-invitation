@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import wreathImg from '../assets/watercolor_yellow_blue_flower_wreath_with_circles.jpg';
 import './CoverPage.css';
 
 export default function CoverPage({ onOpen, isClosing }) {
@@ -9,9 +10,12 @@ export default function CoverPage({ onOpen, isClosing }) {
 
   return (
     <div className={`cover ${isClosing ? 'closing' : ''}`}>
-      {/* Decorative elements */}
-      <div className="cover-floral cover-floral-top"></div>
-      <div className="cover-floral cover-floral-bottom"></div>
+      {/* Wreath decoration */}
+      <div className="cover-wreath">
+        <img src={wreathImg} alt="" aria-hidden="true" />
+      </div>
+
+      {/* Corner decorations */}
       <div className="corner-decor corner-tl"></div>
       <div className="corner-decor corner-tr"></div>
       <div className="corner-decor corner-bl"></div>
@@ -44,7 +48,7 @@ export default function CoverPage({ onOpen, isClosing }) {
         </button>
       </div>
 
-      {/* Maroon decorative strips */}
+      {/* Navy decorative strips */}
       <div className="cover-strip cover-strip-top"></div>
       <div className="cover-strip cover-strip-bottom"></div>
     </div>

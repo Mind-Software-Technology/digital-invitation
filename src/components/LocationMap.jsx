@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { weddingConfig } from '../data/weddingConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import floralImg from '../assets/21_april_11.png';
 import './LocationMap.css';
 
 export default function LocationMap() {
@@ -16,8 +17,12 @@ export default function LocationMap() {
         <div className="corner-decor corner-tr"></div>
         <div className="corner-decor corner-bl"></div>
         <div className="corner-decor corner-br"></div>
-        <div className="floral-decor floral-top-left"></div>
-        <div className="floral-decor floral-top-right"></div>
+        <div className="floral-decor floral-top-left">
+          <img src={floralImg} alt="" aria-hidden="true" />
+        </div>
+        <div className="floral-decor floral-top-right">
+          <img src={floralImg} alt="" aria-hidden="true" />
+        </div>
 
         <div className="section-inner">
           <h2 className="section-title">Lokasi Acara</h2>
@@ -43,7 +48,7 @@ export default function LocationMap() {
               </div>
             ) : (
               <button className="location-show-map-btn" onClick={() => setShowMap(true)}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" strokeWidth="1.5">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--blue-primary)" strokeWidth="1.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>

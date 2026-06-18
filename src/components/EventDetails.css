@@ -7,7 +7,7 @@
   text-align: center;
   padding: var(--space-xl) var(--space-lg);
   background: var(--bg-overlay);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-blue);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-md);
   box-shadow: var(--shadow-sm);
@@ -20,7 +20,7 @@
 .event-name {
   font-size: 22px;
   font-weight: 600;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -54,7 +54,7 @@
 .event-separator {
   text-align: center;
   padding: var(--space-md) 0;
-  color: var(--gold-primary);
+  color: var(--gold-accent);
   font-size: 14px;
 }
 

@@ -1,5 +1,6 @@
 /* ============================
    App Layout — Wedding Invitation
+   Dusty Blue-Grey & Gold Watercolor Theme
    ============================ */
 
 /* --- Main App Container --- */
@@ -60,7 +61,7 @@
   position: absolute;
 }
 
-/* Gold corner flourish using CSS */
+/* Blue corner flourish using CSS */
 .corner-tl {
   top: 0;
   left: 0;
@@ -70,8 +71,8 @@
   left: 8px;
   width: 50px;
   height: 50px;
-  border-top: 3px solid var(--gold-muted);
-  border-left: 3px solid var(--gold-muted);
+  border-top: 3px solid var(--blue-muted);
+  border-left: 3px solid var(--blue-muted);
   border-top-left-radius: 20px;
   opacity: 0.6;
 }
@@ -80,8 +81,8 @@
   left: 16px;
   width: 30px;
   height: 30px;
-  border-top: 2px solid var(--gold-light);
-  border-left: 2px solid var(--gold-light);
+  border-top: 2px solid var(--blue-light);
+  border-left: 2px solid var(--blue-light);
   border-top-left-radius: 12px;
   opacity: 0.4;
 }
@@ -95,8 +96,8 @@
   right: 8px;
   width: 50px;
   height: 50px;
-  border-top: 3px solid var(--gold-muted);
-  border-right: 3px solid var(--gold-muted);
+  border-top: 3px solid var(--blue-muted);
+  border-right: 3px solid var(--blue-muted);
   border-top-right-radius: 20px;
   opacity: 0.6;
 }
@@ -105,8 +106,8 @@
   right: 16px;
   width: 30px;
   height: 30px;
-  border-top: 2px solid var(--gold-light);
-  border-right: 2px solid var(--gold-light);
+  border-top: 2px solid var(--blue-light);
+  border-right: 2px solid var(--blue-light);
   border-top-right-radius: 12px;
   opacity: 0.4;
 }
@@ -120,8 +121,8 @@
   left: 8px;
   width: 50px;
   height: 50px;
-  border-bottom: 3px solid var(--gold-muted);
-  border-left: 3px solid var(--gold-muted);
+  border-bottom: 3px solid var(--blue-muted);
+  border-left: 3px solid var(--blue-muted);
   border-bottom-left-radius: 20px;
   opacity: 0.6;
 }
@@ -130,8 +131,8 @@
   left: 16px;
   width: 30px;
   height: 30px;
-  border-bottom: 2px solid var(--gold-light);
-  border-left: 2px solid var(--gold-light);
+  border-bottom: 2px solid var(--blue-light);
+  border-left: 2px solid var(--blue-light);
   border-bottom-left-radius: 12px;
   opacity: 0.4;
 }
@@ -145,8 +146,8 @@
   right: 8px;
   width: 50px;
   height: 50px;
-  border-bottom: 3px solid var(--gold-muted);
-  border-right: 3px solid var(--gold-muted);
+  border-bottom: 3px solid var(--blue-muted);
+  border-right: 3px solid var(--blue-muted);
   border-bottom-right-radius: 20px;
   opacity: 0.6;
 }
@@ -155,51 +156,55 @@
   right: 16px;
   width: 30px;
   height: 30px;
-  border-bottom: 2px solid var(--gold-light);
-  border-right: 2px solid var(--gold-light);
+  border-bottom: 2px solid var(--blue-light);
+  border-right: 2px solid var(--blue-light);
   border-bottom-right-radius: 12px;
   opacity: 0.4;
 }
 
-/* --- Floral Decoration (CSS-based gradient blobs) --- */
+/* --- Floral Image Decorations (replaces CSS gradient blobs) --- */
 .floral-decor {
   position: absolute;
-  border-radius: 50%;
   pointer-events: none;
   z-index: 2;
-  filter: blur(0.5px);
+  opacity: 0.7;
+}
+
+.floral-decor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .floral-top-left {
-  top: -20px;
-  left: -20px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 70% 70%, rgba(114, 47, 55, 0.3), rgba(160, 50, 79, 0.15), transparent 70%);
+  top: -10px;
+  left: -10px;
+  width: 130px;
+  height: 130px;
 }
 
 .floral-top-right {
-  top: -20px;
-  right: -20px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 30% 70%, rgba(114, 47, 55, 0.3), rgba(160, 50, 79, 0.15), transparent 70%);
+  top: -10px;
+  right: -10px;
+  width: 130px;
+  height: 130px;
+  transform: scaleX(-1);
 }
 
 .floral-bottom-left {
-  bottom: -20px;
-  left: -20px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 70% 30%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
+  bottom: -10px;
+  left: -10px;
+  width: 130px;
+  height: 130px;
+  transform: scaleY(-1);
 }
 
 .floral-bottom-right {
-  bottom: -20px;
-  right: -20px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 30% 30%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
+  bottom: -10px;
+  right: -10px;
+  width: 130px;
+  height: 130px;
+  transform: scale(-1, -1);
 }
 
 /* --- Oval Frame Background --- */
@@ -219,7 +224,7 @@
   transform: translate(-50%, -50%);
   width: 85%;
   height: 80%;
-  border: 2px solid var(--border-gold);
+  border: 2px solid var(--border-blue);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -233,8 +238,25 @@
 
 @media (min-width: 768px) {
   body {
-    background: linear-gradient(135deg, #2c1810, #1a0f0a, #2c1810);
+    background: #1a2332;
+    background-image: url('./assets/rm428-0009b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 35, 50, 0.7);
+    z-index: 0;
+  }
+
+  .app {
+    position: relative;
+    z-index: 1;
   }
 }
