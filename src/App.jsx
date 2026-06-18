@@ -10,7 +10,7 @@ import EventDetails from './components/EventDetails';
 import CountdownTimer from './components/CountdownTimer';
 import LocationMap from './components/LocationMap';
 import WeddingGift from './components/WeddingGift';
-import PhotoGallery from './components/PhotoGallery';
+
 import WishesSection from './components/WishesSection';
 import ClosingSection from './components/ClosingSection';
 import AudioPlayer from './components/AudioPlayer';
@@ -51,7 +51,7 @@ function App() {
         <CountdownTimer />
         <LocationMap />
         <WeddingGift />
-        <PhotoGallery />
+
         <WishesSection />
         <ClosingSection />
       </div>

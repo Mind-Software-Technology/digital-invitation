@@ -103,14 +103,4 @@ export const weddingConfig = {
     regards: 'Hormat Kami Yang Mengundang',
     branding: 'Made With Care and Love By Beranda Invitation',
   },
-
-  // ─── Gallery (placeholder paths) ──────────────────────
-  gallery: [
-    '/images/gallery/photo-1.jpg',
-    '/images/gallery/photo-2.jpg',
-    '/images/gallery/photo-3.jpg',
-    '/images/gallery/photo-4.jpg',
-    '/images/gallery/photo-5.jpg',
-    '/images/gallery/photo-6.jpg',
-  ],
 };
