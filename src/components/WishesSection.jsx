@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import WishForm from './WishForm';
 import WishList from './WishList';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import SectionDecor from './SectionDecor';
 import './WishesSection.css';
 
 const STORAGE_KEY = 'wedding-wishes';
@@ -40,6 +41,7 @@ export default function WishesSection() {
 
   return (
     <section className={`section wishes-section ${isVisible ? 'revealed' : ''}`} ref={ref}>
+      <SectionDecor />
       <div className="section-inner">
         <h2 className="section-title">Kirim Ucapan</h2>
         <div className="ornament-divider-sm"></div>

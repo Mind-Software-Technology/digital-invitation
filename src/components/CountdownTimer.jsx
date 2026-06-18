@@ -1,6 +1,7 @@
 import { useCountdown } from '../hooks/useCountdown';
 import { weddingConfig } from '../data/weddingConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import SectionDecor from './SectionDecor';
 import './CountdownTimer.css';
 
 export default function CountdownTimer() {
@@ -18,6 +19,7 @@ export default function CountdownTimer() {
 
   return (
     <section className={`section countdown-section ${isVisible ? 'revealed' : ''}`} ref={ref}>
+      <SectionDecor />
       <div className="section-inner">
         <h2 className="section-title">Menghitung Hari</h2>
         <div className="ornament-divider-sm"></div>

@@ -10,7 +10,7 @@ export const weddingConfig = {
     father: 'Bpk. Ahmad Saputra',
     mother: 'Ibu Sari Dewi',
     childOrder: 'Putra Pertama dari',
-    photo: '/images/groom.jpg',
+    photo: 'mempelai_laki_laki.png',
     instagram: 'https://instagram.com/handi',
   },
   bride: {
@@ -19,7 +19,7 @@ export const weddingConfig = {
     father: 'Bpk. Jumadi',
     mother: 'Ibu Ratna Sari',
     childOrder: 'Putri Kedua dari',
-    photo: '/images/bride.jpg',
+    photo: 'mempelai_perempuan.png',
     instagram: 'https://instagram.com/ismy',
   },
 

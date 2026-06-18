@@ -6,6 +6,7 @@
 .couple-inner {
   position: relative;
   padding: var(--space-3xl) var(--space-lg);
+  z-index: 2;
 }
 
 .couple-card {
@@ -17,24 +18,26 @@
 }
 
 .couple-photo-frame {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: var(--radius-full);
-  border: 3px solid var(--blue-muted);
-  padding: 4px;
-  box-shadow: var(--shadow-blue-md);
+  border: 3px solid var(--gold-rich);
+  padding: 5px;
+  background: linear-gradient(135deg, var(--cream-light), var(--ivory));
+  box-shadow: var(--shadow-burgundy-md), inset 0 0 0 1px var(--burgundy-muted);
   overflow: hidden;
   margin-bottom: var(--space-md);
+  position: relative;
 }
 
-.couple-photo-placeholder {
-  width: 100%;
-  height: 100%;
+.couple-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--cream), var(--ivory));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--gold-pale);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .couple-photo-frame img {
@@ -42,11 +45,15 @@
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-full);
+  position: relative;
+  z-index: 1;
 }
 
 .couple-name {
-  font-size: 32px;
-  color: var(--blue-primary);
+  font-size: 34px;
+  color: var(--burgundy-primary);
+  text-shadow: 1px 1px 2px rgba(60, 10, 10, 0.1);
+  margin-top: var(--space-xs);
 }
 
 .couple-order {
@@ -59,25 +66,28 @@
   font-size: 14px;
   color: var(--text-secondary);
   font-weight: 400;
+  line-height: 1.6;
+  max-width: 280px;
 }
 
 .couple-ig {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: var(--space-xs);
-  padding: 4px 12px;
-  border: 1px solid var(--border-blue);
+  font-size: 12px;
+  color: var(--gold-deep);
+  margin-top: var(--space-sm);
+  padding: 5px 14px;
+  border: 1px solid var(--border-gold);
   border-radius: var(--radius-xl);
   transition: all var(--transition-normal);
+  letter-spacing: 0.5px;
 }
 
 .couple-ig:hover {
-  color: var(--blue-primary);
-  border-color: var(--blue-primary);
-  background: rgba(107, 131, 166, 0.05);
+  color: var(--cream);
+  background: var(--burgundy-primary);
+  border-color: var(--burgundy-primary);
 }
 
 .couple-divider {
@@ -93,15 +103,16 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--blue-gradient-h);
+  background: var(--gold-rich-gradient-h);
   max-width: 100px;
 }
 
 .couple-heart {
   font-family: var(--font-script);
-  font-size: 40px;
-  color: var(--gold-accent);
+  font-size: 48px;
+  color: var(--gold-rich);
   padding: 0 var(--space-md);
+  text-shadow: 2px 2px 4px rgba(156, 122, 44, 0.3);
 }
 
 /* Reveal animations */

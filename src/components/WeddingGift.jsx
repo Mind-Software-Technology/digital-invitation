@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { weddingConfig } from '../data/weddingConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import floralImg from '../assets/21_april_11.png';
+import SectionDecor from './SectionDecor';
 import './WeddingGift.css';
 
 export default function WeddingGift() {
@@ -34,21 +34,11 @@ export default function WeddingGift() {
 
   return (
     <section className={`section gift-section ${isVisible ? 'revealed' : ''}`} ref={ref}>
-      <div className="maroon-strip"></div>
+      <SectionDecor />
       <div className="gift-inner">
-        <div className="corner-decor corner-tl"></div>
-        <div className="corner-decor corner-tr"></div>
-        <div className="corner-decor corner-bl"></div>
-        <div className="corner-decor corner-br"></div>
-        <div className="floral-decor floral-bottom-left">
-          <img src={floralImg} alt="" aria-hidden="true" />
-        </div>
-        <div className="floral-decor floral-bottom-right">
-          <img src={floralImg} alt="" aria-hidden="true" />
-        </div>
-
         <div className="section-inner">
           <h2 className="section-title">Wedding Gift</h2>
+          <div className="ornament-divider-sm"></div>
           <p className="gift-text">
             Terima kasih telah menambah semangat kegembiraan pernikahan kami dengan kehadiran dan hadiah indah Anda.
           </p>
@@ -62,14 +52,14 @@ export default function WeddingGift() {
                 </div>
               </div>
 
-              <div className="bank-chip">
-                <svg width="36" height="28" viewBox="0 0 36 28">
-                  <rect x="0" y="0" width="36" height="28" rx="4" fill="#8B9DBF" />
-                  <line x1="0" y1="8" x2="36" y2="8" stroke="#6B83A6" strokeWidth="0.5" />
-                  <line x1="0" y1="14" x2="36" y2="14" stroke="#6B83A6" strokeWidth="0.5" />
-                  <line x1="0" y1="20" x2="36" y2="20" stroke="#6B83A6" strokeWidth="0.5" />
-                  <line x1="12" y1="0" x2="12" y2="28" stroke="#6B83A6" strokeWidth="0.5" />
-                  <line x1="24" y1="0" x2="24" y2="28" stroke="#6B83A6" strokeWidth="0.5" />
+              <div className="bank-chip" aria-hidden="true">
+                <svg width="40" height="32" viewBox="0 0 36 28">
+                  <rect x="0" y="0" width="36" height="28" rx="4" fill="#C9A547" />
+                  <line x1="0" y1="8" x2="36" y2="8" stroke="#9C7A2C" strokeWidth="0.5" />
+                  <line x1="0" y1="14" x2="36" y2="14" stroke="#9C7A2C" strokeWidth="0.5" />
+                  <line x1="0" y1="20" x2="36" y2="20" stroke="#9C7A2C" strokeWidth="0.5" />
+                  <line x1="12" y1="0" x2="12" y2="28" stroke="#9C7A2C" strokeWidth="0.5" />
+                  <line x1="24" y1="0" x2="24" y2="28" stroke="#9C7A2C" strokeWidth="0.5" />
                 </svg>
               </div>
 
@@ -91,7 +81,6 @@ export default function WeddingGift() {
           </button>
         </div>
       </div>
-      <div className="maroon-strip"></div>
     </section>
   );
 }

@@ -3,6 +3,10 @@
   padding: var(--space-3xl) var(--space-lg);
 }
 
+.wishes-section .section-inner {
+  z-index: 2;
+}
+
 /* Reveal */
 .wishes-section .section-inner {
   opacity: 0;

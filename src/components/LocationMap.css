@@ -6,13 +6,15 @@
 .location-inner {
   position: relative;
   padding: var(--space-3xl) var(--space-lg);
+  z-index: 2;
 }
 
 .location-map-container {
   margin: var(--space-lg) 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-blue);
+  border: 2px solid var(--gold-rich);
+  box-shadow: var(--shadow-md);
 }
 
 .location-map-wrapper {
@@ -21,26 +23,26 @@
 
 .location-close-btn {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background: rgba(44, 62, 80, 0.5);
-  color: white;
+  background: var(--overlay-dark);
+  color: var(--cream);
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  border: none;
+  border: 1px solid var(--gold-rich);
   cursor: pointer;
   transition: background var(--transition-fast);
 }
 
 .location-close-btn:hover {
-  background: rgba(44, 62, 80, 0.7);
+  background: var(--overlay-dark-strong);
 }
 
 .location-iframe {
@@ -60,16 +62,18 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   border: none;
+  color: var(--burgundy-primary);
 }
 
 .location-show-map-btn span {
   font-size: 14px;
-  color: var(--blue-primary);
+  color: var(--burgundy-primary);
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .location-show-map-btn:hover {
-  background: linear-gradient(135deg, var(--ivory), var(--cream));
+  background: linear-gradient(135deg, var(--ivory), var(--parchment));
 }
 
 .location-info {
@@ -81,8 +85,9 @@
   font-family: var(--font-heading);
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--burgundy-primary);
   margin-bottom: var(--space-sm);
+  letter-spacing: 1px;
 }
 
 .location-address {
