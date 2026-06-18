@@ -1,5 +1,6 @@
 import { weddingConfig } from '../data/weddingConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import floralImg from '../assets/21_april_11.png';
 import './CoupleProfile.css';
 
 export default function CoupleProfile() {
@@ -14,15 +15,19 @@ export default function CoupleProfile() {
         <div className="corner-decor corner-tr"></div>
         <div className="corner-decor corner-bl"></div>
         <div className="corner-decor corner-br"></div>
-        <div className="floral-decor floral-top-right"></div>
-        <div className="floral-decor floral-bottom-left"></div>
+        <div className="floral-decor floral-top-right">
+          <img src={floralImg} alt="" aria-hidden="true" />
+        </div>
+        <div className="floral-decor floral-bottom-left">
+          <img src={floralImg} alt="" aria-hidden="true" />
+        </div>
 
         <div className="section-inner">
           {/* Groom */}
           <div className="couple-card couple-groom">
             <div className="couple-photo-frame">
               <div className="couple-photo-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold-muted)" strokeWidth="1.5">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--blue-muted)" strokeWidth="1.5">
                   <circle cx="12" cy="8" r="4" />
                   <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
                 </svg>
@@ -50,7 +55,7 @@ export default function CoupleProfile() {
           <div className="couple-card couple-bride">
             <div className="couple-photo-frame">
               <div className="couple-photo-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold-muted)" strokeWidth="1.5">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--blue-muted)" strokeWidth="1.5">
                   <circle cx="12" cy="8" r="4" />
                   <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
                 </svg>

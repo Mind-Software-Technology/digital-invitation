@@ -1,45 +1,54 @@
 /* ============================
    DESIGN SYSTEM — Wedding Invitation
+   Dusty Blue-Grey & Gold Watercolor Theme
    ============================ */
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Primary Colors — Gold */
-  --gold-primary: #B8860B;
-  --gold-light: #D4A843;
-  --gold-dark: #8B6508;
-  --gold-muted: #C9A96E;
-  --gold-gradient: linear-gradient(135deg, #D4A843, #B8860B, #8B6508);
-  --gold-gradient-h: linear-gradient(90deg, transparent, #D4A843, #B8860B, #D4A843, transparent);
+  /* Primary Colors — Dusty Blue */
+  --blue-primary: #6B83A6;
+  --blue-light: #8B9DBF;
+  --blue-dark: #4A6D8C;
+  --blue-muted: #A3B5CC;
+  --blue-gradient: linear-gradient(135deg, #8B9DBF, #6B83A6, #4A6D8C);
+  --blue-gradient-h: linear-gradient(90deg, transparent, #8B9DBF, #6B83A6, #8B9DBF, transparent);
 
-  /* Accent Colors — Maroon/Burgundy */
-  --maroon-primary: #800020;
-  --maroon-light: #A0324F;
-  --maroon-dark: #5C0015;
-  --burgundy: #722F37;
-  --maroon-gradient: linear-gradient(135deg, #A0324F, #800020, #5C0015);
+  /* Accent Colors — Warm Gold */
+  --gold-accent: #C9A96E;
+  --gold-light: #D4BA85;
+  --gold-dark: #A88B4A;
+  --gold-gradient: linear-gradient(135deg, #D4BA85, #C9A96E, #A88B4A);
+  --gold-gradient-h: linear-gradient(90deg, transparent, #D4BA85, #C9A96E, #D4BA85, transparent);
+
+  /* Navy Strip */
+  --navy-primary: #4A6D8C;
+  --navy-dark: #2C3E50;
+  --navy-gradient: linear-gradient(135deg, #6B83A6, #4A6D8C, #2C3E50);
 
   /* Neutral / Background */
-  --cream: #FFF8E7;
-  --cream-light: #FFFDF5;
-  --ivory: #FFFFF0;
-  --bg-overlay: rgba(255, 248, 231, 0.88);
-  --bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a843' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --cream: #FAFBFD;
+  --cream-light: #F0F3F8;
+  --ivory: #F5F7FB;
+  --bg-overlay: rgba(240, 243, 248, 0.88);
+  --bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B9DBF' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
   /* Text Colors */
-  --text-primary: #3D2B1F;
-  --text-secondary: #6B5B4D;
-  --text-muted: #8A7B6B;
-  --text-gold: #B8860B;
+  --text-primary: #2C3E50;
+  --text-secondary: #5A6B7F;
+  --text-muted: #8494A7;
+  --text-accent: #6B83A6;
   --text-white: #FFFFFF;
-  --text-cream: #FFF8E7;
+  --text-cream: #F0F3F8;
 
   /* UI Colors */
-  --border-gold: rgba(184, 134, 11, 0.3);
-  --border-gold-strong: rgba(184, 134, 11, 0.6);
-  --shadow-gold: rgba(184, 134, 11, 0.15);
+  --border-blue: rgba(107, 131, 166, 0.3);
+  --border-blue-strong: rgba(107, 131, 166, 0.6);
+  --border-gold: rgba(201, 169, 110, 0.3);
+  --border-gold-strong: rgba(201, 169, 110, 0.6);
+  --shadow-blue: rgba(107, 131, 166, 0.15);
+  --shadow-gold: rgba(201, 169, 110, 0.15);
   --backdrop: rgba(0, 0, 0, 0.6);
-  --glass-bg: rgba(255, 248, 231, 0.7);
+  --glass-bg: rgba(240, 243, 248, 0.7);
   --glass-border: rgba(255, 255, 255, 0.3);
 
   /* Typography */
@@ -71,12 +80,14 @@
   --radius-full: 50%;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
-  --shadow-gold-md: 0 4px 20px rgba(184, 134, 11, 0.2);
-  --shadow-gold-lg: 0 8px 32px rgba(184, 134, 11, 0.25);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-blue-md: 0 4px 20px rgba(107, 131, 166, 0.2);
+  --shadow-blue-lg: 0 8px 32px rgba(107, 131, 166, 0.25);
+  --shadow-gold-md: 0 4px 20px rgba(201, 169, 110, 0.2);
+  --shadow-gold-lg: 0 8px 32px rgba(201, 169, 110, 0.25);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -293,7 +304,7 @@ a {
 .ornament-divider {
   width: 200px;
   height: 2px;
-  background: var(--gold-gradient-h);
+  background: var(--blue-gradient-h);
   margin: var(--space-lg) auto;
   position: relative;
 }
@@ -304,7 +315,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   font-size: 12px;
   background: var(--cream);
   padding: 0 12px;
@@ -313,7 +324,7 @@ a {
 .ornament-divider-sm {
   width: 120px;
   height: 1px;
-  background: var(--gold-gradient-h);
+  background: var(--blue-gradient-h);
   margin: var(--space-md) auto;
 }
 
@@ -334,7 +345,7 @@ a {
 .section-title {
   font-family: var(--font-script);
   font-size: 36px;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   text-align: center;
   margin-bottom: var(--space-lg);
 }
@@ -351,7 +362,7 @@ a {
   position: absolute;
   width: 80px;
   height: 80px;
-  border: 2px solid var(--gold-muted);
+  border: 2px solid var(--blue-muted);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -372,21 +383,21 @@ a {
   border-bottom-right-radius: var(--radius-lg);
 }
 
-/* --- Maroon Strip --- */
+/* --- Navy Strip (replaces Maroon Strip) --- */
 .maroon-strip {
   width: 100%;
   height: 6px;
-  background: var(--maroon-gradient);
+  background: var(--navy-gradient);
 }
 
-/* --- Gold Button --- */
+/* --- Primary Button --- */
 .btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
   padding: 12px 28px;
-  background: var(--gold-gradient);
+  background: var(--blue-gradient);
   color: var(--text-white);
   font-family: var(--font-body);
   font-size: 14px;
@@ -395,13 +406,13 @@ a {
   border-radius: var(--radius-xl);
   cursor: pointer;
   transition: all var(--transition-normal);
-  box-shadow: var(--shadow-gold-md);
+  box-shadow: var(--shadow-blue-md);
   letter-spacing: 0.3px;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+  box-shadow: var(--shadow-blue-lg);
 }
 
 .btn-gold:active {
@@ -418,10 +429,10 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold-muted);
+  background: var(--blue-muted);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-primary);
+  background: var(--blue-primary);
 }

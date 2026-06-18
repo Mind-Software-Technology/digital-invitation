@@ -30,7 +30,7 @@
   padding: var(--space-md);
   background: white;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-blue);
   animation: fadeUp 0.3s ease;
 }
 
@@ -45,7 +45,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background: var(--gold-gradient);
+  background: var(--blue-gradient);
   color: white;
   font-family: var(--font-heading);
   font-size: 16px;
@@ -88,8 +88,8 @@
 }
 
 .badge-ragu {
-  background: rgba(255, 193, 7, 0.15);
-  color: #b8860b;
+  background: rgba(107, 131, 166, 0.15);
+  color: var(--blue-dark);
 }
 
 .wish-card-message {
@@ -112,6 +112,6 @@
   background: transparent;
 }
 .wishlist-scroll::-webkit-scrollbar-thumb {
-  background: var(--gold-muted);
+  background: var(--blue-muted);
   border-radius: 3px;
 }

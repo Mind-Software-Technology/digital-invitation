@@ -18,7 +18,7 @@
   gap: var(--space-xs);
   padding: var(--space-md) var(--space-sm);
   background: var(--bg-overlay);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-blue);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -27,7 +27,7 @@
   font-family: var(--font-heading);
   font-size: 32px;
   font-weight: 700;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   line-height: 1;
 }
 
@@ -41,7 +41,7 @@
 
 .countdown-expired {
   font-size: 24px;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   text-align: center;
   margin-top: var(--space-lg);
 }

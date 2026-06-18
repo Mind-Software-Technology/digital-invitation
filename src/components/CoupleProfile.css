@@ -20,9 +20,9 @@
   width: 160px;
   height: 160px;
   border-radius: var(--radius-full);
-  border: 3px solid var(--gold-muted);
+  border: 3px solid var(--blue-muted);
   padding: 4px;
-  box-shadow: var(--shadow-gold-md);
+  box-shadow: var(--shadow-blue-md);
   overflow: hidden;
   margin-bottom: var(--space-md);
 }
@@ -46,7 +46,7 @@
 
 .couple-name {
   font-size: 32px;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
 }
 
 .couple-order {
@@ -69,15 +69,15 @@
   color: var(--text-muted);
   margin-top: var(--space-xs);
   padding: 4px 12px;
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-blue);
   border-radius: var(--radius-xl);
   transition: all var(--transition-normal);
 }
 
 .couple-ig:hover {
-  color: var(--gold-primary);
-  border-color: var(--gold-primary);
-  background: rgba(184, 134, 11, 0.05);
+  color: var(--blue-primary);
+  border-color: var(--blue-primary);
+  background: rgba(107, 131, 166, 0.05);
 }
 
 .couple-divider {
@@ -93,14 +93,14 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--gold-gradient-h);
+  background: var(--blue-gradient-h);
   max-width: 100px;
 }
 
 .couple-heart {
   font-family: var(--font-script);
   font-size: 40px;
-  color: var(--gold-primary);
+  color: var(--gold-accent);
   padding: 0 var(--space-md);
 }
 

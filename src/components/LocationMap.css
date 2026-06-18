@@ -12,7 +12,7 @@
   margin: var(--space-lg) 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--border-blue);
 }
 
 .location-map-wrapper {
@@ -27,7 +27,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(44, 62, 80, 0.5);
   color: white;
   font-size: 14px;
   display: flex;
@@ -40,7 +40,7 @@
 }
 
 .location-close-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(44, 62, 80, 0.7);
 }
 
 .location-iframe {
@@ -64,7 +64,7 @@
 
 .location-show-map-btn span {
   font-size: 14px;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   font-weight: 500;
 }
 

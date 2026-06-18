@@ -1,5 +1,6 @@
 /* ============================
    CoverPage Styles
+   Dusty Blue-Grey & Gold Watercolor Theme
    ============================ */
 
 .cover {
@@ -43,15 +44,15 @@
 
 .cover-name {
   font-size: 56px;
-  color: var(--gold-primary);
+  color: var(--blue-primary);
   line-height: 1.1;
-  text-shadow: 1px 1px 2px rgba(184, 134, 11, 0.15);
+  text-shadow: 1px 1px 2px rgba(107, 131, 166, 0.15);
 }
 
 .cover-ampersand {
   font-family: var(--font-script);
   font-size: 36px;
-  color: var(--maroon-primary);
+  color: var(--gold-accent);
   margin: -4px 0;
 }
 
@@ -99,7 +100,7 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: var(--maroon-gradient);
+  background: var(--navy-gradient);
   z-index: 5;
 }
 
@@ -111,29 +112,24 @@
   bottom: 0;
 }
 
-/* Floral blobs */
-.cover-floral {
+/* Wreath decoration */
+.cover-wreath {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
   z-index: 3;
   pointer-events: none;
+  opacity: 0.25;
+  animation: fadeIn 1.5s ease 0.3s both;
 }
 
-.cover-floral-top {
-  top: -40px;
-  left: -40px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle at 60% 60%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
-  border-radius: 50%;
-}
-
-.cover-floral-bottom {
-  bottom: -40px;
-  right: -40px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle at 40% 40%, rgba(114, 47, 55, 0.25), rgba(160, 50, 79, 0.1), transparent 70%);
-  border-radius: 50%;
+.cover-wreath img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Close animation */
@@ -152,5 +148,10 @@
 @media (max-width: 360px) {
   .cover-name {
     font-size: 44px;
+  }
+
+  .cover-wreath {
+    width: 320px;
+    height: 320px;
   }
 }
