@@ -1,0 +1,80 @@
+/* ============================
+   SectionDecor — per-section corner decorations
+   Each corner = gold ornament + floral cluster, mirrored across all four
+   corners so the framing stays balanced. One-time fade/scale entrance.
+   ============================ */
+
+.section-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* above the framebackground (::before z-index 1), below content (z-index 2) */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --- Slot: anchors a corner and mirrors it so all four corners match --- */
+.sd-slot {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+}
+
+.sd-tl { top: 0;    left: 0;  transform: none; }
+.sd-tr { top: 0;    right: 0; transform: scaleX(-1); }
+.sd-bl { bottom: 0; left: 0;  transform: scaleY(-1); }
+.sd-br { bottom: 0; right: 0; transform: scale(-1, -1); }
+
+/* --- Corner images: shared entrance (hidden + shrunk, settles on reveal) --- */
+.sd-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  transform-origin: top left;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.9s ease-in-out,
+    transform 0.9s cubic-bezier(0.34, 1.4, 0.64, 1);
+  will-change: opacity, transform;
+}
+
+/* Gold filigree — sits at the very corner, behind the flowers */
+.sd-ornamen {
+  width: 112px;
+  transition-delay: 0.1s;
+}
+
+/* Floral cluster — overlaps the gold, spilling inward into the section.
+   `.jpeg` carries a light background, so multiply blends it into the cream. */
+.sd-flower {
+  top: 6px;
+  left: -6px;
+  width: 150px;
+  mix-blend-mode: multiply;
+  transition-delay: 0.28s;
+}
+
+/* --- Revealed state — corners pop into place --- */
+.section.revealed .sd-corner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .sd-corner {
+    transition: opacity 0.4s ease;
+    transform: scale(1);
+  }
+}
+
+/* Smaller screens — scale the corners down a touch */
+@media (max-width: 360px) {
+  .sd-slot {
+    width: 140px;
+    height: 140px;
+  }
+  .sd-ornamen { width: 92px; }
+  .sd-flower  { width: 124px; }
+}
