@@ -28,7 +28,7 @@ export default function WeddingGift() {
   };
 
   const handleConfirm = () => {
-    const message = encodeURIComponent('Halo, saya ingin mengkonfirmasi bukti transfer untuk wedding gift Ismy & Handi.');
+    const message = encodeURIComponent(`Halo, saya ingin mengkonfirmasi bukti transfer untuk wedding gift ${weddingConfig.bride.name} & ${weddingConfig.groom.name}.`);
     window.open(`${weddingConfig.social.whatsapp}?text=${message}`, '_blank');
   };
 

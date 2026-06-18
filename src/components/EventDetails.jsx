@@ -1,5 +1,6 @@
 import { weddingConfig } from '../data/weddingConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import rumahGadangImg from '../assets/rumahgadang.png';
 import SectionDecor from './SectionDecor';
 import './EventDetails.css';
 
@@ -23,6 +24,11 @@ export default function EventDetails() {
       <div className="section-inner">
         <h2 className="section-title">Waktu & Tempat</h2>
         <div className="ornament-divider-sm"></div>
+
+        {/* Rumah Gadang illustration — fills the gap, gently floating */}
+        <div className="event-rumah-gadang">
+          <img src={rumahGadangImg} alt="" aria-hidden="true" />
+        </div>
 
         {/* Akad */}
         <div className="event-card">

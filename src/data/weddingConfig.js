@@ -5,70 +5,70 @@
 export const weddingConfig = {
   // ─── Couple ────────────────────────────────────────────
   groom: {
-    name: 'Handi',
-    fullName: 'Handi Saputra',
-    father: 'Bpk. Ahmad Saputra',
-    mother: 'Ibu Sari Dewi',
-    childOrder: 'Putra Pertama dari',
+    name: 'Niko',
+    fullName: 'Niko Apriyanto',
+    father: 'Bpk. Ali Amrul',
+    mother: 'Ibu Erniyeti',
+    childOrder: 'Putra Kedua dari',
     photo: 'mempelai_laki_laki.png',
-    instagram: 'https://instagram.com/handi',
+    instagram: 'https://instagram.com/candu_stori',
   },
   bride: {
-    name: 'Ismy',
-    fullName: 'Ismy Jumiati',
-    father: 'Bpk. Jumadi',
-    mother: 'Ibu Ratna Sari',
-    childOrder: 'Putri Kedua dari',
+    name: 'Rani',
+    fullName: 'Rani Sartika',
+    father: 'Bpk. Ardi',
+    mother: 'Ibu Desmawati',
+    childOrder: 'Putri Pertama dari',
     photo: 'mempelai_perempuan.png',
-    instagram: 'https://instagram.com/ismy',
+    instagram: 'https://instagram.com/ranisrtika2',
   },
 
   // ─── Events ────────────────────────────────────────────
   events: {
     akad: {
       title: 'Akad Nikah',
-      date: '2026-08-15',
+      date: '2026-06-26',
       time: '08:00',
       timeEnd: '10:00',
       timezone: 'WIB',
-      venue: 'Kediaman Mempelai Wanita',
-      address:
-        'Koto Keduduk, Kenagarian Taluk Tigo Sakato, Kec. Batang Kapas, Kab. Pesisir Selatan',
+      venue: 'KUA Palupuah',
+      address: 'Kecamatan Palupuah, Kabupaten Agam, Sumatera Barat',
     },
     resepsi: {
       title: 'Resepsi',
-      date: '2026-08-15',
+      date: '2026-06-27',
       time: '11:00',
       timeEnd: 'Selesai',
       timezone: 'WIB',
-      venue: 'Kediaman Mempelai Wanita',
-      address:
-        'Koto Keduduk, Kenagarian Taluk Tigo Sakato, Kec. Batang Kapas, Kab. Pesisir Selatan',
+      venue: 'Jorong Haraban',
+      address: 'Jorong Haraban, Kecamatan Palupuah, Kabupaten Agam, Sumatera Barat',
     },
   },
 
   // Target date for countdown
-  weddingDate: '2026-08-15T08:00:00+07:00',
+  weddingDate: '2026-06-26T08:00:00+07:00',
 
   // ─── Location ──────────────────────────────────────────
   location: {
-    lat: -1.3081,
-    lng: 100.4883,
-    label: 'Kediaman Mempelai Wanita',
-    address:
-      'Koto Keduduk, Kenagarian Taluk Tigo Sakato, Kec. Batang Kapas, Kab. Pesisir Selatan',
+    label: 'Jorong Haraban',
+    address: 'Jorong Haraban, Kec. Palupuah, Kab. Agam, Sumatera Barat',
+    // Searched by place name (no exact GPS pin yet — share a Google Maps link to pin precisely)
+    mapQuery: 'Jorong Haraban, Palupuah, Agam, Sumatera Barat',
     googleMapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=-1.3081,100.4883',
-    embedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8!2d100.4883!3d-1.3081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTgnMjkuMiJTIDEwMMKwMjknMTcuOSJF!5e0!3m2!1sid!2sid!4v1',
+      'https://www.google.com/maps/search/?api=1&query=Jorong%20Haraban%20Palupuah%20Agam%20Sumatera%20Barat',
   },
 
   // ─── Wedding Gift ──────────────────────────────────────
   bankAccounts: [
     {
-      bank: 'BANK BRI',
-      accountNumber: '548101029879534',
-      accountName: 'Ismy Jumiati',
+      bank: 'DANA',
+      accountNumber: '082386405800',
+      accountName: 'Rani Sartika',
+    },
+    {
+      bank: 'BANK BCA',
+      accountNumber: '8125291861',
+      accountName: 'Rani Sartika',
     },
   ],
 
@@ -76,12 +76,12 @@ export const weddingConfig = {
   music: {
     src: '/audio/background-music.mp3',
     title: 'Urang Minang Baralek Gadang',
-    artist: 'Rendy Chow feat Yeyen Zynora',
+    artist: 'Randy Chow feat. Yeyen Zymra',
   },
 
   // ─── Social Media ──────────────────────────────────────
   social: {
-    whatsapp: 'https://wa.me/6281234567890',
+    whatsapp: 'https://wa.me/6282386405800',
     instagram: 'https://instagram.com/beranda.invitation',
     tiktok: 'https://tiktok.com/@beranda.invitation',
   },
