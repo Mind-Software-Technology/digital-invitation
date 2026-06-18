@@ -1,0 +1,73 @@
+.wish-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.wish-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.wish-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.wish-input,
+.wish-select,
+.wish-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  background: white;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.wish-input:focus,
+.wish-select:focus,
+.wish-textarea:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+}
+
+.wish-input::placeholder,
+.wish-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.wish-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B5B4D' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.wish-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.wish-submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  margin-top: var(--space-sm);
+}
+
+.wish-success {
+  text-align: center;
+  font-size: 14px;
+  color: #2d8a4e;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+  padding: var(--space-sm) 0;
+}
