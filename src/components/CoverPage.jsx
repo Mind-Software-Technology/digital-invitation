@@ -5,9 +5,15 @@ import ornamenImg from '../assets/ornamen.png';
 import './CoverPage.css';
 
 export default function CoverPage({ onOpen, isClosing }) {
+  // Personalized guest name comes straight from the URL (?to=...), e.g.
+  // ?to=Alumni+smp+22+Akt+20 → "Alumni smp 22 Akt 20". URLSearchParams decodes
+  // both "+" and "%20" to spaces. The URL itself is the storage — no backend,
+  // no device cache — so each guest gets their own shareable link.
   const guestName = useMemo(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('to') || 'Tamu Undangan';
+    const raw = new URLSearchParams(window.location.search).get('to');
+    if (!raw) return 'Tamu Undangan';
+    const clean = raw.trim().replace(/\s+/g, ' ').slice(0, 60); // tidy + length guard
+    return clean || 'Tamu Undangan';
   }, []);
 
   return (
@@ -37,8 +43,11 @@ export default function CoverPage({ onOpen, isClosing }) {
         <p className="cover-date">26 Juni 2026</p>
 
         <div className="cover-guest">
-          <p className="cover-guest-label">Kepada Yth.</p>
+          <p className="cover-guest-label">Kepada Yth. Bapak/Ibu/Saudara/i :</p>
           <p className="cover-guest-name">{guestName}</p>
+          <p className="cover-guest-note">
+            Mohon maaf apabila ada kesalahan dalam penulisan nama/gelar.
+          </p>
         </div>
 
         <button className="btn-gold cover-btn" onClick={onOpen}>

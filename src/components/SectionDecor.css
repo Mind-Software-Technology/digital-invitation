@@ -7,6 +7,11 @@
    artwork is naturally a BOTTOM-LEFT corner. They therefore need DIFFERENT
    flips per corner, so the flip is baked into each image's own transform
    (sign = orientation, magnitude = entrance scale) rather than the shared slot.
+
+   Assets here are the *-corner.png copies: their transparent padding is
+   trimmed off, so anchoring each image at top/left/right/bottom:0 lands the
+   artwork flush in the section's corner (no inward float). Keep offsets at 0 —
+   the parent clips overflow, so a negative offset would shave real petals.
    ============================ */
 
 .section-decor {
@@ -17,11 +22,13 @@
   overflow: hidden;
 }
 
-/* --- Slot: just anchors a corner (no flip) --- */
+/* --- Slot: just anchors a corner (no flip). Sized to comfortably contain the
+   largest corner image; its dimensions don't affect final placement (the image
+   anchors to the slot's edge, and the slot sits on the section edge). --- */
 .sd-slot {
   position: absolute;
-  width: 170px;
-  height: 170px;
+  width: 160px;
+  height: 160px;
 }
 
 .sd-tl { top: 0;    left: 0;  }
@@ -40,8 +47,8 @@
   will-change: opacity, transform;
 }
 
-.sd-ornamen { width: 112px; transition-delay: 0.1s; }
-.sd-flower  { width: 150px; transition-delay: 0.28s; }
+.sd-ornamen { width: 148px; transition-delay: 0.1s; }
+.sd-flower  { width: 136px; transition-delay: 0.28s; }
 
 /* Anchor each image to its page corner. transform-origin stays at the default
    (center) so the ±1 flips mirror the content IN PLACE without shifting the
@@ -84,12 +91,17 @@
   }
 }
 
-/* Smaller screens — scale the corners down a touch */
+/* Narrow phones — scale corners down so they stay tucked in the corners and
+   don't crowd the centered text. (.app is capped at 500px, so these widths are
+   real device widths.) */
+@media (max-width: 430px) {
+  .sd-slot { width: 138px; height: 138px; }
+  .sd-ornamen { width: 124px; }
+  .sd-flower  { width: 116px; }
+}
+
 @media (max-width: 360px) {
-  .sd-slot {
-    width: 140px;
-    height: 140px;
-  }
-  .sd-ornamen { width: 92px; }
-  .sd-flower  { width: 124px; }
+  .sd-slot { width: 120px; height: 120px; }
+  .sd-ornamen { width: 108px; }
+  .sd-flower  { width: 100px; }
 }
