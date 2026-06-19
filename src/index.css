@@ -5,6 +5,11 @@
 
 /* --- CSS Custom Properties --- */
 :root {
+  /* Undangan ini selalu tema terang. Keyword `only` mencegah browser
+     (mis. Chrome Auto Dark Theme di Android / dark mode device) membalik
+     atau menggelapkan warnanya, termasuk form input & scrollbar. */
+  color-scheme: only light;
+
   /* ─── Semantic Burgundy / Maroon ─────────────── */
   --burgundy-primary: #8B1A1A;
   --burgundy-light: #A53838;
