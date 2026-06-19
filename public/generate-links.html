@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="color-scheme" content="light" />
 <title>Generator Link Undangan — Rani &amp; Niko</title>
 <style>
   :root{
@@ -67,7 +69,7 @@
     <div class="row">
       <div>
         <label>URL Undangan
-          <span class="hint">— alamat undangan yang sudah online (tanpa <code>?to=</code>)</span>
+          <span class="hint">— terisi otomatis dari halaman ini; ubah hanya jika pakai domain lain</span>
         </label>
         <input id="baseUrl" type="text" placeholder="https://undangan-rani-niko.example.com" />
       </div>
@@ -125,6 +127,12 @@ Wassalamu'alaikum Warahmatullahi Wabarakatuh`;
 
   const $ = (id) => document.getElementById(id);
   $('waTpl').value = DEFAULT_WA;
+
+  // Auto-isi URL undangan dari origin halaman ini (saat online / dev server).
+  // Saat dibuka via file:// origin tak berguna, jadi dibiarkan kosong untuk diisi manual.
+  if (location.protocol === 'http:' || location.protocol === 'https:') {
+    $('baseUrl').value = location.origin;
+  }
 
   function buildLink(base, name){
     const b = base.trim().replace(/\/+$/, ''); // buang trailing slash
