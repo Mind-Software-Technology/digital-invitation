@@ -1,5 +1,7 @@
-import bungaImg from '../assets/bunga.png';
-import ornamenImg from '../assets/ornamen.png';
+// Corner-trimmed copies (transparent padding removed) so the artwork sits
+// flush in each section corner. The padded originals stay reserved for CoverPage.
+import bungaImg from '../assets/bunga-corner.png';
+import ornamenImg from '../assets/ornamen-corner.png';
 import './SectionDecor.css';
 
 /**
