@@ -49,8 +49,8 @@ export default function ClosingSection() {
 
           {/* Brand Logo */}
           <div className="closing-brand-logo">
-            <span className="brand-b">Bi</span>
-            <span className="brand-sub">BERANDA</span>
+            <span className="brand-b">MST</span>
+            <span className="brand-sub">Mind Software Technology</span>
           </div>
 
           <div className="closing-music">

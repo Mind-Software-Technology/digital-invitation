@@ -101,6 +101,6 @@ export const weddingConfig = {
     message:
       "Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kedua mempelai.",
     regards: 'Hormat Kami Yang Mengundang',
-    branding: 'Made With Care and Love By Beranda Invitation',
+    branding: 'Made With Care and Love By Mind Software Technology',
   },
 };
