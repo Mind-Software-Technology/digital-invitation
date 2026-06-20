@@ -39,46 +39,37 @@
   object-position: center;
 }
 
-/* --- Corner decorations --- */
+/* --- Corner decorations ---
+   Ornamen emas (kiri-atas & kanan-bawah), bunga (kanan-atas & kiri-bawah).
+   Offset negatif besar agar artwork mepet ke ujung sudut (PNG punya
+   ruang transparan di sekitarnya, jadi perlu ditarik keluar ke pojok). */
 .cover-corner {
   position: absolute;
-  z-index: 5;
   pointer-events: none;
   height: auto;
   animation: fadeIn 1.6s ease 0.3s both;
 }
 
-/* Gold ornament — top-left */
-.corner-ornamen-tl {
-  top: -2px;
-  left: -2px;
-  width: 120px;
+/* Ornamen emas */
+.corner-ornamen {
+  z-index: 4;
+  width: 220px;
 }
 
-/* Gold ornament — bottom-right (rotated to mirror) */
-.corner-ornamen-br {
-  bottom: -2px;
-  right: -2px;
-  width: 120px;
-  transform: rotate(180deg);
-}
-
-/* Flowers — top-right (rotated to point inward) */
-.corner-flower-tr {
-  top: -10px;
-  right: -10px;
-  width: 175px;
-  transform: rotate(180deg);
+/* Bunga */
+.corner-flower {
+  z-index: 5;
+  width: 350px;
   mix-blend-mode: multiply;
 }
 
-/* Flowers — bottom-left */
-.corner-flower-bl {
-  bottom: -10px;
-  left: -10px;
-  width: 175px;
-  mix-blend-mode: multiply;
-}
+/* Ornamen — kiri-atas (orientasi asli) & kanan-bawah (mirror) */
+.corner-ornamen.tl { top: -65px; left: -10px; }
+.corner-ornamen.br { bottom: -65px; right: -10px; transform: scale(-1, -1); }
+
+/* Bunga — kiri-bawah (orientasi asli) & kanan-atas (mirror) */
+.corner-flower.bl { bottom: -158px; left: -80px; }
+.corner-flower.tr { top: -158px; right: -80px; transform: scale(-1, -1); }
 
 .cover-content {
   position: relative;
@@ -109,10 +100,17 @@
 }
 
 .cover-name {
-  font-size: 64px;
-  color: var(--burgundy-primary);
-  line-height: 1.1;
-  text-shadow: 1px 2px 3px rgba(60, 10, 10, 0.18);
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 1.05;
+  /* Teks emas metalik (gradient) */
+  background: var(--gold-rich-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-rich); /* fallback bila background-clip tak didukung */
+  /* text-shadow tak tampil saat fill transparan -> pakai drop-shadow */
+  filter: drop-shadow(1px 2px 2px rgba(90, 65, 15, 0.30));
 }
 
 .cover-ampersand {
@@ -190,14 +188,12 @@
 /* Responsive */
 @media (max-width: 360px) {
   .cover-name {
-    font-size: 48px;
+    font-size: 54px;
   }
-  .corner-ornamen-tl,
-  .corner-ornamen-br {
+  .corner-ornamen {
     width: 95px;
   }
-  .corner-flower-tr,
-  .corner-flower-bl {
-    width: 140px;
+  .corner-flower {
+    width: 135px;
   }
 }

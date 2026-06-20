@@ -3,6 +3,19 @@
    Minang Burgundy & Gold Cream Theme
    ============================ */
 
+/* --- Custom display font: Laraboyok ---
+   Taruh file font di: public/fonts/laraboyok.(woff2|ttf|otf)
+   Kalau file belum ada, otomatis fallback ke Playfair Display. */
+@font-face {
+  font-family: 'Laraboyok';
+  src: url('/fonts/laraboyok.woff2') format('woff2'),
+       url('/fonts/laraboyok.ttf') format('truetype'),
+       url('/fonts/laraboyok.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- CSS Custom Properties --- */
 :root {
   /* Undangan ini selalu tema terang. Keyword `only` mencegah browser
@@ -92,6 +105,7 @@
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
   --font-arabic: 'Amiri', serif;
+  --font-display: 'Laraboyok', 'Playfair Display', serif; /* nama mempelai */
 
   /* ─── Spacing ─── */
   --space-xs: 4px;
