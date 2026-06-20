@@ -23,19 +23,19 @@ export default function CoverPage({ onOpen, isClosing }) {
         <img src={frameBg} alt="" />
       </div>
 
-      {/* Corner decorations — gold ornaments (TL & BR), flowers (TR & BL) */}
-      <img src={ornamenImg} className="cover-corner corner-ornamen-tl" alt="" aria-hidden="true" />
-      <img src={bungaImg} className="cover-corner corner-flower-tr" alt="" aria-hidden="true" />
-      <img src={bungaImg} className="cover-corner corner-flower-bl" alt="" aria-hidden="true" />
-      <img src={ornamenImg} className="cover-corner corner-ornamen-br" alt="" aria-hidden="true" />
+      {/* Corner decorations — ornamen emas (TL & BR), bunga (TR & BL) */}
+      <img src={ornamenImg} className="cover-corner corner-ornamen tl" alt="" aria-hidden="true" />
+      <img src={bungaImg} className="cover-corner corner-flower tr" alt="" aria-hidden="true" />
+      <img src={bungaImg} className="cover-corner corner-flower bl" alt="" aria-hidden="true" />
+      <img src={ornamenImg} className="cover-corner corner-ornamen br" alt="" aria-hidden="true" />
 
       <div className="cover-content">
         <p className="cover-label">The Wedding of</p>
 
         <div className="cover-names">
-          <h1 className="cover-name font-script">Rani</h1>
+          <h1 className="cover-name">Rani</h1>
           <span className="cover-ampersand">&</span>
-          <h1 className="cover-name font-script">Niko</h1>
+          <h1 className="cover-name">Niko</h1>
         </div>
 
         <div className="ornament-divider"></div>

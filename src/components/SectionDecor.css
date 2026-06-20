@@ -47,8 +47,8 @@
   will-change: opacity, transform;
 }
 
-.sd-ornamen { width: 148px; transition-delay: 0.1s; }
-.sd-flower  { width: 136px; transition-delay: 0.28s; }
+.sd-ornamen { width: 448px; transition-delay: 0.1s; }
+.sd-flower  { width: 436px; transition-delay: 0.28s; }
 
 /* Anchor each image to its page corner. transform-origin stays at the default
    (center) so the ±1 flips mirror the content IN PLACE without shifting the
