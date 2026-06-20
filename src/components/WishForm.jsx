@@ -6,24 +6,30 @@ export default function WishForm({ onSubmit }) {
   const [attendance, setAttendance] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim() || !attendance) return;
+    if (!name.trim() || !attendance || sending) return;
 
-    onSubmit({
-      name: name.trim(),
-      attendance,
-      message: message.trim(),
-    });
+    setSending(true);
+    try {
+      await onSubmit({
+        name: name.trim(),
+        attendance,
+        message: message.trim(),
+      });
 
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3000);
 
-    // Reset form
-    setName('');
-    setAttendance('');
-    setMessage('');
+      // Reset form
+      setName('');
+      setAttendance('');
+      setMessage('');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -69,8 +75,8 @@ export default function WishForm({ onSubmit }) {
         ></textarea>
       </div>
 
-      <button type="submit" className="btn-gold wish-submit-btn">
-        Kirim
+      <button type="submit" className="btn-gold wish-submit-btn" disabled={sending}>
+        {sending ? 'Mengirim…' : 'Kirim'}
       </button>
 
       {submitted && (
