@@ -100,17 +100,11 @@
 }
 
 .cover-name {
-  font-family: var(--font-display);
-  font-size: 72px;
-  line-height: 1.05;
-  /* Teks emas metalik (gradient) */
-  background: var(--gold-rich-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--gold-rich); /* fallback bila background-clip tak didukung */
-  /* text-shadow tak tampil saat fill transparan -> pakai drop-shadow */
-  filter: drop-shadow(1px 2px 2px rgba(90, 65, 15, 0.30));
+  font-size: 64px;
+  line-height: 1.1;
+  /* Maroon — selaras dengan nama mempelai di dalam undangan (CoupleProfile) */
+  color: var(--burgundy-primary);
+  text-shadow: 1px 2px 3px rgba(60, 10, 10, 0.18);
 }
 
 .cover-ampersand {
@@ -188,7 +182,7 @@
 /* Responsive */
 @media (max-width: 360px) {
   .cover-name {
-    font-size: 54px;
+    font-size: 48px;
   }
   .corner-ornamen {
     width: 95px;
