@@ -17,7 +17,8 @@
 .section-decor {
   position: absolute;
   inset: 0;
-  z-index: 1; /* above the framebackground (::before z-index 1), below content (z-index 2) */
+  z-index: 1;
+  /* above the framebackground (::before z-index 1), below content (z-index 2) */
   pointer-events: none;
   overflow: hidden;
 }
@@ -31,10 +32,25 @@
   height: 160px;
 }
 
-.sd-tl { top: 0;    left: 0;  }
-.sd-tr { top: 0;    right: 0; }
-.sd-bl { bottom: 0; left: 0;  }
-.sd-br { bottom: 0; right: 0; }
+.sd-tl {
+  top: 0;
+  left: 0;
+}
+
+.sd-tr {
+  top: 0;
+  right: 0;
+}
+
+.sd-bl {
+  bottom: 0;
+  left: 0;
+}
+
+.sd-br {
+  bottom: 0;
+  right: 0;
+}
 
 /* --- Corner images: shared entrance state (hidden + shrunk) --- */
 .sd-corner {
@@ -47,42 +63,110 @@
   will-change: opacity, transform;
 }
 
-.sd-ornamen { width: 448px; transition-delay: 0.1s; }
-.sd-flower  { width: 436px; transition-delay: 0.28s; }
+.sd-ornamen {
+  width: 448px;
+  transition-delay: 0.1s;
+}
+
+.sd-flower {
+  width: 436px;
+  transition-delay: 0.28s;
+}
 
 /* Anchor each image to its page corner. transform-origin stays at the default
    (center) so the ±1 flips mirror the content IN PLACE without shifting the
    box off its edge (which overflow:hidden would clip). */
-.sd-tl .sd-corner { top: 0;    left: 0;  }
-.sd-tr .sd-corner { top: 0;    right: 0; }
-.sd-bl .sd-corner { bottom: 0; left: 0;  }
-.sd-br .sd-corner { bottom: 0; right: 0; }
+.sd-tl .sd-corner {
+  top: 0;
+  left: 0;
+}
+
+.sd-tr .sd-corner {
+  top: 0;
+  right: 0;
+}
+
+.sd-bl .sd-corner {
+  bottom: 0;
+  left: 0;
+}
+
+.sd-br .sd-corner {
+  bottom: 0;
+  right: 0;
+}
 
 /* --- Hidden state: orientation (sign) + shrunk (0.6) --- */
 /* Gold ornament — artwork is naturally a TOP-LEFT corner */
-.sd-tl .sd-ornamen { transform: scale(0.6); }
-.sd-tr .sd-ornamen { transform: scale(-0.6, 0.6); }
-.sd-bl .sd-ornamen { transform: scale(0.6, -0.6); }
-.sd-br .sd-ornamen { transform: scale(-0.6, -0.6); }
+.sd-tl .sd-ornamen {
+  transform: scale(0.6);
+}
+
+.sd-tr .sd-ornamen {
+  transform: scale(-0.6, 0.6);
+}
+
+.sd-bl .sd-ornamen {
+  transform: scale(0.6, -0.6);
+}
+
+.sd-br .sd-ornamen {
+  transform: scale(-0.6, -0.6);
+}
 
 /* Flower — artwork is naturally a BOTTOM-LEFT corner */
-.sd-bl .sd-flower { transform: scale(0.6); }
-.sd-br .sd-flower { transform: scale(-0.6, 0.6); }
-.sd-tl .sd-flower { transform: scale(0.6, -0.6); }
-.sd-tr .sd-flower { transform: scale(-0.6, -0.6); }
+.sd-bl .sd-flower {
+  transform: scale(0.6);
+}
+
+.sd-br .sd-flower {
+  transform: scale(-0.6, 0.6);
+}
+
+.sd-tl .sd-flower {
+  transform: scale(0.6, -0.6);
+}
+
+.sd-tr .sd-flower {
+  transform: scale(-0.6, -0.6);
+}
 
 /* --- Revealed state: same orientation, full size --- */
-.section.revealed .sd-corner { opacity: 1; }
+.section.revealed .sd-corner {
+  opacity: 1;
+}
 
-.section.revealed .sd-tl .sd-ornamen { transform: scale(1); }
-.section.revealed .sd-tr .sd-ornamen { transform: scale(-1, 1); }
-.section.revealed .sd-bl .sd-ornamen { transform: scale(1, -1); }
-.section.revealed .sd-br .sd-ornamen { transform: scale(-1, -1); }
+.section.revealed .sd-tl .sd-ornamen {
+  transform: scale(1);
+}
 
-.section.revealed .sd-bl .sd-flower { transform: scale(1); }
-.section.revealed .sd-br .sd-flower { transform: scale(-1, 1); }
-.section.revealed .sd-tl .sd-flower { transform: scale(1, -1); }
-.section.revealed .sd-tr .sd-flower { transform: scale(-1, -1); }
+.section.revealed .sd-tr .sd-ornamen {
+  transform: scale(-1, 1);
+}
+
+.section.revealed .sd-bl .sd-ornamen {
+  transform: scale(1, -1);
+}
+
+.section.revealed .sd-br .sd-ornamen {
+  transform: scale(-1, -1);
+}
+
+.section.revealed .sd-bl .sd-flower {
+  transform: scale(1);
+}
+
+.section.revealed .sd-br .sd-flower {
+  transform: scale(-1, 1);
+}
+
+.section.revealed .sd-tl .sd-flower {
+  transform: scale(1, -1);
+}
+
+.section.revealed .sd-tr .sd-flower {
+  transform: scale(-1, -1);
+}
 
 /* Respect reduced-motion: fade only, orientation snaps (no scale animation) */
 @media (prefers-reduced-motion: reduce) {
@@ -95,13 +179,31 @@
    don't crowd the centered text. (.app is capped at 500px, so these widths are
    real device widths.) */
 @media (max-width: 430px) {
-  .sd-slot { width: 138px; height: 138px; }
-  .sd-ornamen { width: 124px; }
-  .sd-flower  { width: 116px; }
+  .sd-slot {
+    width: 138px;
+    height: 138px;
+  }
+
+  .sd-ornamen {
+    width: 124px;
+  }
+
+  .sd-flower {
+    width: 116px;
+  }
 }
 
 @media (max-width: 360px) {
-  .sd-slot { width: 120px; height: 120px; }
-  .sd-ornamen { width: 108px; }
-  .sd-flower  { width: 100px; }
+  .sd-slot {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sd-ornamen {
+    width: 108px;
+  }
+
+  .sd-flower {
+    width: 100px;
+  }
 }

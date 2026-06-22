@@ -27,7 +27,7 @@ export const weddingConfig = {
   events: {
     akad: {
       title: 'Akad Nikah',
-      date: '2026-06-26',
+      date: '2026-06-29',
       time: '08:00',
       timeEnd: '10:00',
       timezone: 'WIB',
@@ -36,7 +36,7 @@ export const weddingConfig = {
     },
     resepsi: {
       title: 'Resepsi',
-      date: '2026-06-27',
+      date: '2026-06-29',
       time: '11:00',
       timeEnd: 'Selesai',
       timezone: 'WIB',
@@ -46,7 +46,7 @@ export const weddingConfig = {
   },
 
   // Target date for countdown
-  weddingDate: '2026-06-26T08:00:00+07:00',
+  weddingDate: '2026-06-29T08:00:00+07:00',
 
   // ─── Location ──────────────────────────────────────────
   location: {

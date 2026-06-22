@@ -33,14 +33,14 @@ export default function CoverPage({ onOpen, isClosing }) {
         <p className="cover-label">The Wedding of</p>
 
         <div className="cover-names">
-          <h1 className="cover-name">Rani</h1>
+          <h1 className="cover-name font-script">Rani</h1>
           <span className="cover-ampersand">&</span>
-          <h1 className="cover-name">Niko</h1>
+          <h1 className="cover-name font-script">Niko</h1>
         </div>
 
         <div className="ornament-divider"></div>
 
-        <p className="cover-date">26 Juni 2026</p>
+        <p className="cover-date">29 Juni 2026</p>
 
         <div className="cover-guest">
           <p className="cover-guest-label">Kepada Yth. Bapak/Ibu/Saudara/i :</p>
